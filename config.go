@@ -8,7 +8,7 @@ import (
 
 	"github.com/kurrik/oauth1a"
 	"github.com/kurrik/twittergo"
-	"gopkg.in/v1/yaml"
+	"launchpad.net/goyaml"
 )
 
 type Config struct {
@@ -24,7 +24,7 @@ func ReadConfig(path string) (*Config, error) {
 		return nil, err
 	}
 	var config Config
-	err = yaml.Unmarshal(buf, &config)
+	err = goyaml.Unmarshal(buf, &config)
 	if err != nil {
 		return nil, err
 	}
